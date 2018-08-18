@@ -1,0 +1,90 @@
+
+/*Formata formularios e div*/
+.read_div_usu{
+	border: 0px;
+	border-radius: 7px;
+}
+.read_div_usu input[type=submit]{
+	font-weight:bold;
+    font-size: 16px;
+    text-align: center;
+	color:#10a881;
+	background-color: #a19f9f;
+	width: 85px;
+	height: 20px;
+	border: 0px;
+	border-radius: 7px;
+}
+.read_div_usu input[type=submit]:hover{
+	color:#318aca;
+	background-color: #615f5f;
+	/*Botoes submit ao passar commouse por cima*/
+}
+.read_div_usu input[type=submit]:after{
+	color:#318aca;
+	background-color: #615f5f;
+}
+.form_menu input[type=email]{
+	text-align:center;
+	height: 30px;
+	width: 400px;
+	border: 0px;
+	border-radius: 15px;
+}
+.form_menu input[type=password]{
+	text-align:center;
+	height: 30px;
+	width: 400px;
+	border: 0px;
+	border-radius: 15px;
+}
+.form_menu input[type=submit]{
+	font-weight:bold;
+    font-size: 16px;
+    text-align: center;
+	color:#10a881;
+	background-color: #a19f9f;
+	height: 30px;
+	width: 400px;
+	border: 0px;
+	border-radius: 15px;
+}
+.form_menu input[type=submit]:hover{
+	color:#318aca;
+	background-color: #615f5f;
+	/*Botoes submit ao passar commouse por cima*/
+}
+.form_menu input[type=submit]:after{
+	color:#318aca;
+	background-color: #615f5f;
+	/*Botoes submit ao clicar*/
+}
+.form_menu textarea{
+	border: 0px;
+	border-radius: 7px;
+}
+.form_menu {
+	border: 0px;
+	border-radius: 7px;
+}
+.form_menu li{
+	background-color: #efefef;
+	display: inline-block;
+	color:#FFF;
+	float:0px;
+	width:125px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	font-size:25px;
+}
+.form_menu li: hover{
+	display:none;
+}
+.form_menu li{
+	background-color: #c8c6c6;
+}
+.form_menu li{
+	border: 0px;
+	border-radius: 7px;
+}

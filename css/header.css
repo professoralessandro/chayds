@@ -1,0 +1,19 @@
+#header{
+	margin:0 auto;
+	font-size:.8em;
+}
+
+#header{
+	padding:20px 0;
+}
+#header #hgroup h1, #header #hgroup h2{
+	margin:0;
+	font-weight:normal;
+	text-transform:none;
+}
+#header #hgroup h1{
+	font-size:2.5em;
+}
+#header #hgroup h2{
+	font-size:1em;
+}
