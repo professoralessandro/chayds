@@ -105,7 +105,7 @@ echo "<li><a href='login/validausuario.php'>ENTRAR</a></li>&nbsp;&nbsp;&nbsp;&nb
     </nav>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<form name="form_email" action="phpfunctions/mail/enviar_email.php" target="_self" method="post">
+<form name="form_email" action="Classes/enviar_email.php" target="_self" method="post">
 <table class="form_menu2" bgcolor="#EEEEEE" align="center">
    <tr>
      <h1><td align="center"><h3>Entre em contato</h3></td></h1></tr><tr align="center">

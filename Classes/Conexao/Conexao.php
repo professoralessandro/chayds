@@ -1,5 +1,5 @@
 <?php
-class ConectaBanco
+class Conexao
 {//classe
 	//PROPRIEDADES
 	private $servidor;
@@ -8,6 +8,7 @@ class ConectaBanco
 	private $nomeBanco;
 	private $banco;
 	
+	//CONTRUTOR DA CLASSE
 	function __construct($servidor = "localhost", $usuario = "root", $senha="", $nomeBanco = "chayds_teste")
 	{
 		$this->SetServidor($servidor);
@@ -63,16 +64,10 @@ class ConectaBanco
 		{
 			die ('Erro de conexão('. $this->banco->connect_errno.'):'.$this->banco->connect_error);
 		}
-		else
-		{
-			echo "Conectou Miseravi";
-		}
 	}//CONECTAR
 	public function Desconectar()
 	{
 		$this->banco->close();
 	}//Desconectar
-
-	
 }//classe
 ?>
