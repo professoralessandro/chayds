@@ -432,8 +432,8 @@ if(isset($_POST['enviarLogin']) && $_POST['enviarLogin'] != null)
                 <a class="dropdown-item" href="../Posts/FacebookPosts.php"><img title="Instagram" class="rounded-circle" src="../../../images/2.gif" width="30" height="30" />&nbsp;Facebook</a>
                 <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../Videos/Videos.php"><img title="Instagram" class="rounded-circle" src="../../../images/quanto-custa-anunciar-no-youtube.png" width="30" height="30" />&nbsp;Youtube</a>
-				<!--<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>-->
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>
               </div>
             </li>
 		  <!-- IMAGENS
@@ -582,7 +582,6 @@ if(isset($dados['imagem']) && $dados['imagem'] != null && isset($dados['imagem2'
 else
 { //IF DUAS IMAGENS ?>
 	<img src="../../../images/<?php echo $dados['imagem'];?>" height="500" width="1920" alt="<?php echo $dados['nome'];?>" title="<?php echo $dados['nome'];?>" class="img-fluid"> <!-- FIM -->
-	<hr>
 <?php
 }
 ?>
@@ -719,7 +718,7 @@ if(isset($_SESSION['usuarioId']) && $_SESSION['usuarioId'] != null)
 <hr>
 <?php 
 }
-$resultado = $dalComentario->listarComentario();
+$resultado = $dalComentario->localizarComentarioProduto($id);
 
 while($dados = mysqli_fetch_array($resultado))
 {

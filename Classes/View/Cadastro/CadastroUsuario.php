@@ -219,11 +219,11 @@ $dalUsuario = new DALUsuario($conexao);
 		<form name="formLogin" action="../../../bd/valida/validateste.php" target="_self" method="post">
 			<table align="center">
               <tr>
-				<div class='border-0'><td><img class="rounded-circle" src="../../../images/user-silhouette.png" width="35" height="37" /></td><td>&nbsp;<input class="alert border-0 text-center" name="email" type="email" required="required" id="celular" placeholder="Informe o seu email (Obrigatório)" title="email" size="30" maxlength="50"></div>
+				<div class='border-0'><td><img class="rounded-circle" src="../../../images/user-silhouette.png" width="35" height="37" /></td><td>&nbsp;<input class="alert border-0 text-center" name="email" type="email" required="required" id="celular" placeholder="Informe o seu email (Obrigatório)" title="email" size="30" maxlength=50"></div>
 			    </td>
 			  </tr>
 			  <tr>
-				<div class='border-0'><td><img class="rounded-circle" src="../../../images/lock2.png" width="35" height="37" /></td><td>&nbsp;<input name="senha" type="password" class="alert border-0 text-center" required="required" id="endereco" placeholder="Informe a senha (Obrigatório)" title="Senha" size="30" maxlength="50"></div>
+				<div class='border-0'><td><img class="rounded-circle" src="../../../images/lock2.png" width="35" height="37" /></td><td>&nbsp;<input name="senha" type="password" class="alert border-0 text-center" required="required" id="endereco" placeholder="Informe a senha (Obrigatório)" title="Senha" size="30" maxlength=50"></div>
 				</td>
 			  </tr>
 		</table>
@@ -259,8 +259,8 @@ $dalUsuario = new DALUsuario($conexao);
                 <a class="dropdown-item" href="../Posts/FacebookPosts.php"><img title="Instagram" class="rounded-circle" src="../../../images/2.gif" width="30" height="30" />&nbsp;Facebook</a>
                 <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../Videos/Videos.php"><img title="Instagram" class="rounded-circle" src="../../../images/quanto-custa-anunciar-no-youtube.png" width="30" height="30" />&nbsp;Youtube</a>
-				<!--<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>-->
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>
               </div>
             </li>
 		  <!-- IMAGENS
@@ -410,7 +410,8 @@ $dalUsuario = new DALUsuario($conexao);
     <div class="container" align="center">
       <table align="center">
         <tr>
-          <td align="center"><label for="nome"><font class="font-weight-bold" color="#ff0000">*</font>
+          <td align="center">
+			  <label for="nome"><font class="font-weight-bold" color="#ff0000">*</font>
               <img title="nome de usuário" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="nome" type="text" required="required" id="nome" placeholder="Informe o seu nome completo "title="Nome" size="25" maxlength="50">&nbsp;
 		  </td>
           <td align="center"><label for="cpf"><font class="font-weight-bold" color="#ff0000">*</font>

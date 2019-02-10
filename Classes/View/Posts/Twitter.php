@@ -15,26 +15,50 @@ $dalProduto = new DALProduto($conexao);
 $dalPessoa = new DALPessoa($conexao);
 $dalCompra = new DALCompra($conexao);
 
-$costumerKey = '';
-$costumerSecret ='';
-$acessToken ='';
-$acessTokenSecret ='';
+$costumerKey = 'P56qgLBfFTx1JXLGSPijfYim3';
+$costumerSecret ='XNm1U8QkZHiJ65EsddCO1xYSH89PvFNEE5o5u6ZJtya9iLDLtg';
+$acessToken ='958175646034874368-R9QrAIbeeTSgaKhnoXAxWJsZIgPf334';
+$acessTokenSecret ='2WObK4aviTe1e54TzR7e72W09mQW4IEugXESgbSbQabgx';
 
 $connection = new TwitterOAuth($costumerKey, $costumerSecret, $acessToken, $acessTokenSecret);
 $content = $connection->get("account/verify_credentuals");
 
-//CREATE TWITTER
-$newStatus = $connection->post("statuses/update", ["status" => "this tweet sent via the Twitter API"]);
 
 //GET TWITTS
-$statuses = $connection->get("statuses/home_timeline", ["count" => 25, "exclude_replays" => true]);
+$statuses = $connection->get("statuses/home_timeline", ["user" => 'Alessan30242111' ,"count" => 25, "exclude_replays" => true]);
 
-print_r($statuses);
+//print_r($st);
 
-//URL ITENS DA PLAYLIST
-$url ='https://api.instagram.com/v1/users/self/media/recent?access_token='.$tokenAcesso;
+$numPage = 0;
 
-$resposta = json_decode(file_get_contents($url));
+$contadorMensagem = 0;
+if(isset($_POST["idTransacao"]) && $_POST["idTransacao"] != null)
+{
+	$idTransacao = preg_replace('/[^[:alnum:]-]/','',$_POST["idTransacao"]);
+	$contadorMensagem = 1;
+}
+//POST PHP
+if(isset($_POST['enviarLogin']) && $_POST['enviarLogin'] != null)
+{
+	$email = trim($_POST['email']);
+	$senha = trim($_POST['senha']);
+	
+	$pessoa = new Pessoa("","","","","",$email,"","","","","","","","","","","","",$senha);
+	
+	
+	if(isset($_POST['email']) && $_POST['email'] != null  && isset($_POST['senha']) && $_POST['senha'] != null)
+	{
+		$dalPessoa->logar($pessoa);
+	}
+	else
+	{
+			echo "<META HTTP-EQUIV=REFRESH CONTENT ='0;URL=http://www.chayds.com.br/contato_chayds.php'>
+			<script type= \"text/javascript\">
+			alert(\"Erro ao enviar a mensagem. Por favor verifique os campos obrigatórios e tente novamente\");
+			</script>";
+	}
+}
+
 //FIM POST PHP
 ?>
 <!DOCTYPE html>
@@ -178,8 +202,8 @@ $resposta = json_decode(file_get_contents($url));
                 <a class="dropdown-item" href="../Posts/FacebookPosts.php"><img title="Instagram" class="rounded-circle" src="../../../images/2.gif" width="30" height="30" />&nbsp;Facebook</a>
                 <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../Videos/Videos.php"><img title="Instagram" class="rounded-circle" src="../../../images/quanto-custa-anunciar-no-youtube.png" width="30" height="30" />&nbsp;Youtube</a>
-				<!--<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>-->
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>
               </div>
             </li>
 		  <!-- IMAGENS
@@ -323,7 +347,7 @@ $resposta = json_decode(file_get_contents($url));
       </div>
     </div>
     <hr>
-    <h2 class="text-center dropdown-item"><a class="text-center dropdown-item" href="https://www.instagram.com/ale_angel2010/" target="_blank">INSTAGRAM CHAYDS&nbsp;<img class="rounded-circle" src='../../../images/1.gif' title="Instagram" width="40" height="40" ></a></h2>
+    <h2 class="text-center dropdown-item"><a class="text-center dropdown-item" href="https://twitter.com/Alessan30242111" target="_blank">TWITTER CHAYDS&nbsp;<img class="rounded-circle" src='../../../images/3.gif' title="Instagram" width="40" height="40" ></a></h2>
     <hr>
     <div class="container">
       <div class="row text-center">
@@ -333,28 +357,78 @@ $resposta = json_decode(file_get_contents($url));
 	
 	$auxContador = 0;
 		  
-	foreach($resposta->data as $listElementos)
+	$numPage = 0;
+		  
+	foreach($statuses as $item)
 	{
+		//print_r($item);
+		
 		$contador = $contador + 1; $auxContador ++;
-		$imagem = $listElementos->images->standard_resolution->url;
-		$nomeCompleto = $listElementos->user->full_name;
-		$comentario = $listElementos->caption->text;
-		$likes = $listElementos->likes->count;
-		$numeroComentarios = $listElementos->comments->count;
-	?>
+		
+		$imagemPerfil = $item->user->profile_image_url_https;
+		$usuario = $item->user->screen_name;
+		$nomeCompleto = $item->user->name;
+		$legenda = $item->text;
+		$local = $item->user->location;
+		
+		//$imagem = $item->entities->media[0]->media_url_https;
+		//$link = $item->entities->media[0]->url;
+		if(isset($item->entities->media[0]->media_url_https))
+		{
+			if(isset($item->entities->media[0]->media_url_https) && isset($item->entities->media[0]->url))
+			{
+				$imagem = $item->entities->media[0]->media_url_https;
+				$link = $item->entities->media[0]->url;
+			}
+			else if(is_null($item->entities->media[0]->media_url_https) && isset($item->entities->media[0]->url))
+			{
+				$item->entities->media[0]->media_url_https = ' ';
+				$imagem = '../../../images/contrucao.png';
+				$link = $item->entities->urls[0]->url;
+			}
+			$item->entities->media[0]->media_url_https = ' ';
+		}
+		else
+		{
+			$imagem = '../../../images/contrucao.png';
+			$link = $item->entities->urls[0]->url;
+		}
+		
+		if($item->entities->user_mentions[0]->name == 'YouTube') 
+		{
+			//BLOCO DE CÓDIGO DO YOUTUBE
+			$imagem = '../../../images/quanto-custa-anunciar-no-youtube.png';
+		}
+		
+	//echo("id Post: ".$id ."<br>Imagem: ".$imagem."<br>Nome: ".$nomeCompleto."<br>texto: ".$legenda."<br>local: ".$local."<br>num: ".$numPage."<br>Link: ".$link."<br>Media: ".$media);
+	 $numPage ++ ?>
 	<div class="col-md-4 pb-1 pb-md-0">
-          <div class="card">
-			<a href="https://www.instagram.com/ale_angel2010/" target="_blank"><img src='<?php echo $imagem;?>' alt="Maca Black" width="299" height="290" class="card-img-top rounded"></a>
-            <div class="card-body">
-            <h5 class="card-title"><a class="dropdown-item" href="https://www.instagram.com/ale_angel2010/" target="_blank"><?php echo $nomeCompleto; ?></a></h5>
-			<div class="dropdown-divider"></div>
-              <p class="card-text"><?php echo $comentario; ?><br>
-			<div class="dropdown-divider"></div>
-			  <img src="../../../images/336581231.png" width="28" height="30" /> <?php echo ($likes); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img  src="../../../images/3365812345.png" width="28" height="30" /> <?php echo ($numeroComentarios); ?>
-			  </p>
-            </div>
-		  </div>
-			</form>
+        <div class="card"><img src='<?php echo $imagem;?>' width="299" height="290" class="card-img-top rounded">
+			<div class="card-body">
+			<h5><a class="dropdown-item" href="https://twitter.com/Alessan30242111"><img src='<?php echo $imagemPerfil;?>' width="35" height="35" class="rounded-circle"> @<?php echo($usuario); ?></a></h5>
+			<?php
+			if(isset($legenda) && $legenda != ' ')
+			{ ?>
+				<div class="dropdown-divider"></div>
+				<?php if(isset($link))
+				{
+				?>
+					<a class="btn-link" href='<?php echo $link ?>' target="_blank">
+				<?php
+				}
+				?>
+				<h4 class="card-title"><?php echo $legenda; ?></a></h4>
+				</div>
+		<?php
+			}
+		  	else if(is_null($comentario) || $comentario == ' ')
+			{ ?>
+				</div>
+	<?php	}
+		?>
+		
+		</div>
+	</form>
         </div>
 	<?php
 		
@@ -366,6 +440,7 @@ $resposta = json_decode(file_get_contents($url));
 	<?php }
 	}//WHILE
 	?>
+</div>
 </div>
 <!-- CLASSE AINDA NÃO  USADA
     <hr>

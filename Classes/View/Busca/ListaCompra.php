@@ -160,8 +160,8 @@ $dalProduto = new DALProduto($conexao);
                 <a class="dropdown-item" href="../Posts/FacebookPosts.php"><img title="Instagram" class="rounded-circle" src="../../../images/2.gif" width="30" height="30" />&nbsp;Facebook</a>
                 <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../Videos/Videos.php"><img title="Instagram" class="rounded-circle" src="../../../images/quanto-custa-anunciar-no-youtube.png" width="30" height="30" />&nbsp;Youtube</a>
-				<!--<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>-->
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>
               </div>
             </li>
 		  <!-- IMAGENS
@@ -349,6 +349,9 @@ $dalProduto = new DALProduto($conexao);
 			<td align="center">
 				<h5>Status da compra:</h5>
 			</td>
+			<td align="center">
+				<h5>Quantidade:</h5>
+			</td>
 	    </tr>
 	<?php
 
@@ -420,9 +423,12 @@ $dalProduto = new DALProduto($conexao);
 		 		
 		 		echo $status; ?>
           </td>
+		  <td align="center">
+              <?php echo $dados['quantidadeProduto']; ?>
+          </td>
           <td align="center">
 				<a href='../Alterar/AlterarCompra.php?idCompra=<?php echo $dados['idCompra'];?> '><input class="btn btn-primary" name='alterar' type='submit' value='alterar' ></a>
-			  </td>
+		  </td>
 			  <td align="center">
 
 				<a onclick="return conf();" href='ListaCompraDelAdmin.php?idCompra=<?php echo $dados['idCompra'];?> '><input class="btn btn-danger" name='deletar' type='submit' value='Deletar' ></a>

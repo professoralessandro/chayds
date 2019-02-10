@@ -115,6 +115,13 @@ class DALUsuario
 		$valor = str_replace($source, $replace, $cep); //remove os pontos e substitui a virgula pelo ponto
 		return $valor; //retorna o valor formatado para gravar no banco
 	}
+	
+	//BUSCAR DADOS
+	function buscaTextos($texto)
+	{
+		$source = array('https:/%', '');
+	}
+	
 	//FIM DA FUNÇÃO
 }//class
 ?>

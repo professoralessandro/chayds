@@ -1,4 +1,4 @@
-﻿<?php session_start(); ?>
+<?php session_start(); ?>
 <?php include_once("../../Controller/DALPessoa.php"); ?>
 <?php include_once("../../Controller/DALProduto.php"); ?>
 <?php include_once("../../Controller/DALCompra.php"); ?>
@@ -13,8 +13,8 @@ $dalProduto = new DALProduto($conexao);
 $dalPessoa = new DALPessoa($conexao);
 $dalCompra = new DALCompra($conexao);
 
-$canalId = '';
-$tokenAcesso = '';
+$canalId = 'UC3_LSofkHlF3jeWpYAYNG_A';
+$tokenAcesso = 'AIzaSyCL4GOCI8nJu4cVCzXLhespok_sVCxMxLs';
 $url ='https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId='.$canalId.'&key='.$tokenAcesso;
 
 $resposta = json_decode(file_get_contents($url));
@@ -197,8 +197,8 @@ if(isset($_POST['enviarLogin']) && $_POST['enviarLogin'] != null)
                 <a class="dropdown-item" href="../Posts/FacebookPosts.php"><img title="Instagram" class="rounded-circle" src="../../../images/2.gif" width="30" height="30" />&nbsp;Facebook</a>
                 <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../Videos/Videos.php"><img title="Instagram" class="rounded-circle" src="../../../images/quanto-custa-anunciar-no-youtube.png" width="30" height="30" />&nbsp;Youtube</a>
-				<!--<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>-->
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>
               </div>
             </li>
 		  <!-- IMAGENS
@@ -503,7 +503,7 @@ if(isset($_POST['enviarLogin']) && $_POST['enviarLogin'] != null)
           <strong>Chayd`s Vitamins, Supplements and Minerals</strong><br>
 Importadora Brasileira<br>
 <a href="#" target="_self"><img src="../../../images/icon_phone.png" alt="Telefone" width="25" height="25" class="rounded-circle img-fluid"></a> +55 13 9 9644 2358<br>
-<abbr><a href="#" target="_self"><img src="images/icon_whatsapp.png" alt="Whatsapp""" width="25" height="25" class="rounded-circle img-fluid"Classes/View/Classes/View/images/icon_phone.png></a></abbr> +55 13 9 9644 2358
+<abbr><a href="#" target="_self"><img src="../../../images/icon_whatsapp.png" alt="Whatsapp" width="25" height="25" class="rounded-circle img-fluid"></a></abbr> +55 13 9 9644 2358
           </address>
           <address>
           <strong>Serviço de Atendimento ao Cliente</strong><br>

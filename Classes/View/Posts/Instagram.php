@@ -1,4 +1,4 @@
-﻿<?php session_start(); ?>
+<?php session_start(); ?>
 <?php include_once("../../Controller/DALPessoa.php"); ?>
 <?php include_once("../../Controller/DALProduto.php"); ?>
 <?php include_once("../../Controller/DALCompra.php"); ?>
@@ -13,8 +13,8 @@ $dalProduto = new DALProduto($conexao);
 $dalPessoa = new DALPessoa($conexao);
 $dalCompra = new DALCompra($conexao);
 
-$clientId = '';
-$tokenAcesso = '';
+$clientId = 'e5b4b2ab68c24624a99bad2c813b513f';
+$tokenAcesso = '576095257.e5b4b2a.29f2d904f9ac4b29a66ce735f5a6b987';
 
 //URL ITENS DA PLAYLIST
 $url ='https://api.instagram.com/v1/users/self/media/recent?access_token='.$tokenAcesso;
@@ -163,8 +163,8 @@ $resposta = json_decode(file_get_contents($url));
                 <a class="dropdown-item" href="../Posts/FacebookPosts.php"><img title="Instagram" class="rounded-circle" src="../../../images/2.gif" width="30" height="30" />&nbsp;Facebook</a>
                 <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../Videos/Videos.php"><img title="Instagram" class="rounded-circle" src="../../../images/quanto-custa-anunciar-no-youtube.png" width="30" height="30" />&nbsp;Youtube</a>
-				<!--<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>-->
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>
               </div>
             </li>
 		  <!-- IMAGENS

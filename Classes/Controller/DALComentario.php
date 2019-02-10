@@ -63,6 +63,16 @@ class DALComentario
 		$this->conexao->Desconectar();
 	}
 	
+	public function localizarComentarioProduto($idProduto)
+	{
+		$sqlComand = "select * from tbComentario where idProduto = ". $idProduto;
+		
+		$banco = $this->conexao->GetBanco();
+		$retorno = $banco->query($sqlComand);
+		return $retorno;
+		$this->conexao->Desconectar();
+	}
+	
 	public function listarComentario()
 	{
 		$sqlComand = " select * from tbComentario ";

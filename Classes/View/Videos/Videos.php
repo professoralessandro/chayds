@@ -1,4 +1,4 @@
-﻿<?php session_start(); ?>
+<?php session_start(); ?>
 <?php include_once("../../Controller/DALPessoa.php"); ?>
 <?php include_once("../../Controller/DALProduto.php"); ?>
 <?php include_once("../../Controller/DALCompra.php"); ?>
@@ -13,9 +13,9 @@ $dalProduto = new DALProduto($conexao);
 $dalPessoa = new DALPessoa($conexao);
 $dalCompra = new DALCompra($conexao);
 
-$canalId = '';
-$tokenAcesso = '';
-$idPlayList = '';
+$canalId = 'UC3_LSofkHlF3jeWpYAYNG_A';
+$tokenAcesso = 'AIzaSyCL4GOCI8nJu4cVCzXLhespok_sVCxMxLs';
+$idPlayList = 'PLEQQ8v9qGtM4ote30KFl-YQPYtGsB_GUQ';
 //$url ='https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId='.$canalId.'&key='.$tokenAcesso; //URL VISUALIZAR PLAYLISTS
 
 //URL ITENS DA PLAYLIST
@@ -201,8 +201,8 @@ if(isset($_POST['enviarLogin']) && $_POST['enviarLogin'] != null)
                 <a class="dropdown-item" href="../Posts/FacebookPosts.php"><img title="Instagram" class="rounded-circle" src="../../../images/2.gif" width="30" height="30" />&nbsp;Facebook</a>
                 <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../Videos/Videos.php"><img title="Instagram" class="rounded-circle" src="../../../images/quanto-custa-anunciar-no-youtube.png" width="30" height="30" />&nbsp;Youtube</a>
-				<!--<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>-->
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>
               </div>
             </li>
 		  <!-- IMAGENS

@@ -230,7 +230,7 @@ if(isset($_SESSION['usuarioAcessoNiveis']) && $_SESSION['usuarioAcessoNiveis'] !
 				}
 				else if($imagemAnt3 == null && $imagemNova3 == null)
 				{
-					$img3 = "400X200.gif";
+					$img3 = "bkg07.jpg";
 				}
 				else if($imagemAnt3 == null && isset($imagemNova3) && 3 != null)
 				{
@@ -421,8 +421,8 @@ if(isset($_SESSION['usuarioAcessoNiveis']) && $_SESSION['usuarioAcessoNiveis'] !
                 <a class="dropdown-item" href="../Posts/FacebookPosts.php"><img title="Instagram" class="rounded-circle" src="../../../images/2.gif" width="30" height="30" />&nbsp;Facebook</a>
                 <div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="../Videos/Videos.php"><img title="Instagram" class="rounded-circle" src="../../../images/quanto-custa-anunciar-no-youtube.png" width="30" height="30" />&nbsp;Youtube</a>
-				<!--<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>-->
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="../Posts/Twitter.php"><img title="Twitter" class="rounded-circle" src="../../../images/3.gif" width="30" height="30" />&nbsp;Twitter</a>
               </div>
             </li>
 		  <!-- IMAGENS
@@ -583,177 +583,166 @@ if(isset($_SESSION['usuarioAcessoNiveis']) && $_SESSION['usuarioAcessoNiveis'] !
 			  <input hidden="hidden" name="imagemAnt3" type="text" title="imagemAnt3" value='<?php echo $dados['imagem3'];?>' size="40" maxlength=50">
 			  <input hidden="hidden" name="idProduto" type="text" id="nomeProduto" title="Nome do Produto" value='<?php echo $dados['idProduto'];?>' size="40" maxlength=50">
 			<tr>
-			  <td align="center"><h5>Nome do produto: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="nomeProduto" type="text" id="nomeProduto" placeholder="Informe o nome do produto (Obrigatório)" title="Nome do Produto" value='<?php echo $dados['nome'];?>' size="40" maxlength=50">
-			  </blockquote>
-			  </td>
-				<td align="center"><h5><font color="#ff0000">*</font> Descrição do produto: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="descricaoProduto" type="text" required="required" id="descricaoProduto" placeholder="Descrição do produto (Obrigatório)" title="Descrição do produto" value='<?php echo $dados['descricaoProduto'];?>' size="40" maxlength=250>
-			  </blockquote></td>
-			  <td align="center"><h5><font color="#ff0000">*</font> Quantidade: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="quantidade" type="number" required="required" id="quantidade" placeholder="Informe a quantidade (Obrigatório)" title="Quantidade" value='<?php echo $dados['quantidade'];?>' size="15" maxlength=50">
-			  </blockquote>
-			  </td>
-			</tr>
-			<tr>        
-			<tr>
-			  <td align="center"><h5><font color="#ff0000">*</font> Estoque Mínimo: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="estoqueMinimo" type="number" required="required" id="estoqueMinimo" placeholder="Informe o estoque mínimo (Obrigatório)" title="Estoque minimo" value='<?php echo $dados['quantidadeMinima'];?>' size="15" maxlength=50">
-			  </blockquote>
-			  </td>
-			  <td align="center"><h5><font color="#ff0000">*</font> Altura: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="altura" type="number" required="required" id="altura" placeholder="Informe a altura (Obrigatório)" title="Altura" value='<?php echo $dados['altura'];?>' size="15" maxlength=50">
-			  </blockquote>
-			  </td>
-			  <td align="center"><h5><font color="#ff0000">*</font> Largura: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="largura" type="number" required="required" id="largura" placeholder="Informe a largura (Obrigatório)" title="Largura" value='<?php echo $dados['largura'];?>' size="15" maxlength=50">
-			  </blockquote>
-			  </td>
+			  <td align="center">
+				  <label for="nomeProduto"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="nome Produto" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="nomeProduto" type="text" required="required" id="nomeProduto" placeholder="Nome do produto" title="nomeProduto" value='<?php echo $dados['nome'];?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="descricaoProduto"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="Descricao produto" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="descricaoProduto" type="text" required="required" id="descricaoProduto" placeholder="Descrição príncipal" title="descricaoProduto" value='<?php echo $dados['descricaoProduto'];?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="quantidade"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="quantidade" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="quantidade" type="number" required="required" id="quantidade" placeholder="Quantidade" title="quantidade" value='<?php echo $dados['quantidade'];?>' size="15" maxlength="50">&nbsp;
+		  	  </td>
 			</tr>
 			<tr>
-			  <td align="center"><h5><font color="#ff0000">*</font> Comprimento: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="comprimento" type="number" required="required" id="comprimento" placeholder="Informe o comprimento (Obrigatório)" title="Comprimento" value='<?php echo $dados['comprimento'];?>' size="15" maxlength=50">
-			  </blockquote>
-			  </td>
-			  <td align="center"><h5>* Peso: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="peso" type="text" required="required" id="telefone" placeholder="Infome o peso (Obrigatório)" title="Peso" value='<?php echo $dalProduto->virgula($dados['peso']);?>' size="20" maxlength=50">
-			  </blockquote></td>
-			  <td align="center"><h5>Publico Alvo: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="publicoAlvo" type="text" id="celular" placeholder="Informe o público alvo (Obrigatório)" title="Público Alvo" value='<?php echo $dados['publicoAlvo'];?>' size="40" maxlength=50">
-			  </blockquote></td>
+			<td><p>&nbsp;</p></td>
+			</tr>    
+			<tr>
+			  <td align="center">
+				  <label for="estoqueMinimo"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="estoqueMinimo" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="estoqueMinimo" type="number" required="required" id="estoqueMinimo" placeholder="Estoque mínimo" title="estoqueMinimo" value='<?php echo $dados['quantidadeMinima'];?>' size="15" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="altura"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="altura" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="altura" type="number" required="required" id="altura" placeholder="Altura (CM)" title="altura" value='<?php echo $dados['altura'];?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="largura"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="largura" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="largura" type="number" required="required" id="largura" placeholder="Largura (CM)" title="largura" value='<?php echo $dados['largura'];?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
 			</tr>
 			<tr>
-			  <td align="center"><h5>Código de Barras: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="codigoBarras" type="text" id="telefone" placeholder="Informe o código de barras (Obrigatório)" title="Código de Barras" value='<?php echo $dados['codigoBarras'];?>' size="40" maxlength=50">
-			  </blockquote></td>
-			  <td align="center"><h5><font color="#ff0000">*</font> Fornecedor: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <select name="fornecedor" id="fornecedor" title="Fornecedor" type="text">
-					<option value="Chayds">Chayds vitamins and minnerals</option>
-					<option value="Outros">Outros</option>
-					<option value="Novo">novo</option>
+			<td><p>&nbsp;</p></td>
+			</tr>
+			<tr>
+			  <td align="center">
+				  <label for="comprimento"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="comprimento" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="comprimento" type="number" required="required" id="comprimento" placeholder="Comprimento (CM)" title="comprimento" value='<?php echo $dados['comprimento'];?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="peso"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="peso" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="peso" type="number" required="required" id="peso" placeholder="Peso (KG)" title="peso" value='<?php echo $dalProduto->virgula($dados['peso']);?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="publicoAlvo">
+				  <img title="publicoAlvo" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="publicoAlvo" type="text" id="publicoAlvo" placeholder="Público alvo" title="publicoAlvo" value='<?php echo $dados['publicoAlvo'];?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
+			</tr>
+			<tr>
+			<td><p>&nbsp;</p></td>
+			</tr>
+			<tr>
+			  <td align="center">
+				  <label for="codigoBarras"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="codigoBarras" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="codigoBarras" type="number" required="required" id="codigoBarras" placeholder="Código de barras" title="codigoBarras" value='<?php echo $dados['codigoBarras'];?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="fornecedor"><font class="font-weight-bold" color="#ff0000">*</font>
+			 	  <img title="fornecedor" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;
+				  <select class='btn btn-group border-0 text-center font-weight-bold' name="fornecedor" id="fornecedor" title="Fornecedor" type="text">
+					<option class='btn btn-group border-0 text-center font-weight-bold' value="Chayds">Chayds vitamins and minnerals</option>
+					<option class='btn btn-group border-0 text-center font-weight-bold' value="Outros">Outros</option>
+					<option class='btn btn-group border-0 text-center font-weight-bold' value="Novo">novo</option>
 				  </select>
-			  </blockquote></td>
-			  <td align="center"><h5><font color="#ff0000">*</font> Preço de Custo: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="precoCusto" type="text" required="required" id="preco_custo" placeholder="Digite o nome preço de custo EX. R$15,99 (obrigatório)" title="Preço de custo" value='<?php echo $dalProduto->virgula($dados['precoCusto']);?>' size="20" maxlength="50">
-			  </blockquote></td>
+			  </td>
+			  <td align="center">
+				  <label for="precoCusto"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="precoCusto" class="rounded-circle" src="../../../images/69881coin.svg" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="precoCusto" type="text" required="required" id="precoCusto" placeholder="Preço de custo" title="precoCusto" value='<?php echo $dalProduto->virgula($dados['precoCusto']);?>' size="15" maxlength="50">&nbsp;
+		  	  </td>
 			</tr>
 			<tr>
-			  <td align="center"><h5><font color="#ff0000">*</font> Preço de Venda: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="precoVenda" type="text" required="required" id="preco_venda" placeholder="Digite o preço de venda EX. R$20,99 (obrigatório)" title="Preço de venda" value='<?php echo $dalProduto->virgula($dados['precoVenda']);?>' size="20" maxlength="50">
-			  </blockquote></td>
-			  <td align="center"><h5>Preço com Desconto: </h5>
-				<blockquote>
-				  <input name="precoDesconto" type="text" id="Email" placeholder="Digite o preço de venda EX. R$20,99 (revendedores)" title="Preço com Desconto" value='<?php echo $dalProduto->virgula($dados['precoVendaDesconto']);?>' size="20" maxlength=50">
-			  </blockquote></td>
-			  <td align="center"><h5>Link do Youtube: </h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="videoYoutube" type="text" id="telefone" placeholder="Informe um link no youtube do seu produto" title="Código de Barras" value='<?php echo $dados['video'];?>' size="60" maxlength=200">
-			  </blockquote></td>
+			<td><p>&nbsp;</p></td>
+			</tr>
+			<tr>
+			  <td align="center">
+				  <label for="precoVenda"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="precoVenda" class="rounded-circle" src="../../../images/69881coin.svg" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="precoVenda" type="text" required="required" id="precoVenda" placeholder="Preço de venda" title="precoVenda" value='<?php echo $dalProduto->virgula($dados['precoVenda']);?>' size="15" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="precoDesconto"><font class="font-weight-bold" color="#ff0000">*</font>
+				  <img title="precoDesconto" class="rounded-circle" src="../../../images/69881coin.svg" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="precoDesconto" type="text" required="required" id="precoDesconto" placeholder="Preço com desconto" title="precoDesconto" value='<?php echo $dalProduto->virgula($dados['precoVendaDesconto']);?>' size="15" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="videoYoutube"><font class="font-weight-bold" color="#ff0000"></font>
+				  <img title="videoYoutube" class="rounded-circle" src="../../../images/anunciar-no-youtube.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="videoYoutube" type="text" id="videoYoutube" placeholder="Informe um link no youtube" title="videoYoutube" value='<?php echo $dados['video'];?>' size="25" maxlength="50">&nbsp;
+		  	  </td>
 			  </tr>
+			  <tr>
+			  <td><p>&nbsp;</p></td>
+		      </tr>
 			  <tr>
 				<td align="center"><h5>Selecionar imagem principal do produto:</br><font color="#ff0000"> Tamanho máximo 15MB</font></h5>
 				<blockquote>
-				  <input  name="imagem" type="file" id="imagem" title="imagem" size="30" maxlength=50">
+				  <input class='btn btn-group border-0 text-center font-weight-bold' name="imagem" type="file" id="imagem" title="imagem" size="30" maxlength=50">
 			  </blockquote></td>
 			  <td align="center"><h5>Selecionar segunda imagem do produto:</br><font color="#ff0000"> Tamanho máximo 15MB</font></h5>
 				<blockquote>
-				  <input  name="imagem2" type="file" id="imagem" title="imagem 2" size="30" maxlength=50">
+				  <input class='btn btn-group border-0 text-center font-weight-bold' name="imagem2" type="file" id="imagem" title="imagem 2" size="30" maxlength=50">
 			  </blockquote></td>
 			<td align="center"><h5>Selecionar terceira imagem do produto:</br><font color="#ff0000"> Tamanho máximo 15MB</font></h5>
 				<blockquote>
-				  <input  name="imagem3" type="file" id="imagem" title="imagem 3" size="30" maxlength=50">
+				  <input class='btn btn-group border-0 text-center font-weight-bold' name="imagem3" type="file" id="imagem" title="imagem 3" size="30" maxlength=50">
 			  </blockquote></td>
 			</tr>
 		</table>
 		<table align="center">
 		  <tr>
-			  <td align="center"><h5>Primeiro título</h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="titulo1" type="text" id="descricaoProduto" placeholder="Informe um título de um propriedade do produro" title="Primeiro título" value='<?php echo $dados['titulo1'];?>' size="35" maxlength=50>
-			  </blockquote></td>
-			  <td align="center"><h5>Segundo título</h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="titulo2" type="text" id="titulo1" placeholder="Informe mais um título de um propriedade do produro" title="Segundo título" value='<?php echo $dados['titulo2'];?>' size="35" maxlength=50>
-			  </blockquote></td>
-			  <td align="center"><h5>Terceiro título</h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="titulo3" type="text" id="descricaoProduto" placeholder="Informe mais um título de um propriedade do produro" title="Terceiro título" value='<?php echo $dados['titulo3'];?>' size="35" maxlength=50>
-			  </blockquote></td>
-			  <td align="center"><h5>Quarto título</h5>
-				<font color="#000000">
-				<blockquote>
-				  <input name="titulo4" type="text" id="descricaoProduto" placeholder="Informe mais um título de um propriedade do produro" title="Quarto título" value='<?php echo $dados['titulo4'];?>' size="35" maxlength=50>
-			  </blockquote></td>
+			  <td><p>&nbsp;</p></td>
+		  </tr>
+		  <tr>
+			  <td align="center">
+				  <label for="titulo1">
+				  <img title="titulo1" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="titulo1" type="text" id="titulo1" placeholder="1º Propriedade do produto" title="titulo1" value='<?php echo $dados['titulo1'];?>' size="20" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="titulo2">
+				  <img title="titulo2" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="titulo2" type="text" id="titulo2" placeholder="2º Propriedade do produto" title="titulo2" value='<?php echo $dados['titulo2'];?>' size="20" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="titulo3">
+				  <img title="titulo3" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="titulo3" type="text" id="titulo3" placeholder="3º Propriedade do produto" title="titulo3" value='<?php echo $dados['titulo3'];?>' size="20" maxlength="50">&nbsp;
+		  	  </td>
+			  <td align="center">
+				  <label for="titulo4">
+				  <img title="titulo4" class="rounded-circle" src="../../../images/1246548.png" width="35" height="37" /></label>&nbsp;<input class='btn btn-group border-0 text-center font-weight-bold' name="titulo4" type="text" id="titulo4" placeholder="4º Propriedade do produto" title="titulo4" value='<?php echo $dados['titulo4'];?>' size="20" maxlength="50">&nbsp;
+		  	  </td>
 		 </tr>
 		 <tr>
-			  <td align="center"><h5>Primeira Descrição</h5>
-				<font color="#000000">
-				<blockquote>
+			  <td><p>&nbsp;</p></td>
+		 </tr>
+		 <tr>
+			  <td align="center">
 				  <input hidden="" name="descricaoAnt1" type="text" id="descricaoProduto" placeholder="Informe um título de um propriedade do produro" title="Primeiro título" value='<?php echo $dados['descricao1'];?>' size="35" maxlength=50>
-				  <textarea name="descricao1" cols="35" rows="5" maxlength="250" id="comentariosProduto" placeholder="Informe a primeira propriedade" title="Comentarios Produto"></textarea>
-			  </blockquote></td>
-			  <td align="center"><h5>Segunda Descrição</h5>
-				<font color="#000000">
-				<blockquote>
+				  <textarea class='btn btn-group border-0 text-center font-weight-bold' name="descricao1" cols="25" rows="5" maxlength="250" id="comentariosProduto" placeholder="Informe a primeira propriedade" title="Comentarios Produto"></textarea>
+			  </td>
+			  <td align="center">
 				  <input hidden="" name="descricaoAnt2" type="text" id="descricaoProduto" placeholder="Informe um título de um propriedade do produro" title="Primeiro título" value='<?php echo $dados['descricao2'];?>' size="35" maxlength=50>
-				  <textarea name="descricao2" cols="35" rows="5" maxlength="250" id="comentariosProduto" placeholder="Informe a segunda propriedade" title="Segunda Descrição"></textarea>
-			  </blockquote></td>
-			  <td align="center"><h5>Terceira Descrição</h5>
-				<font color="#000000">
-				<blockquote>
+				  <textarea class='btn btn-group border-0 text-center font-weight-bold' name="descricao2" cols="25" rows="5" maxlength="250" id="comentariosProduto" placeholder="Informe a segunda propriedade" title="Segunda Descrição"></textarea>
+			  </td>
+			  <td align="center">
 				  <input hidden="" name="descricaoAnt3" type="text" id="descricaoProduto" placeholder="Informe um título de um propriedade do produro" title="Primeiro título" value='<?php echo $dados['descricao3'];?>' size="35" maxlength=50>
-				  <textarea name="descricao3" cols="35" rows="5" maxlength="250" id="comentariosProduto" placeholder="Informe a terceira propriedade" title="Terceira Descrição"></textarea>
-		   </blockquote></td>
-			  <td align="center"><h5>Quarta Descrição</h5>
-				<font color="#000000">
-				<blockquote>
+				  <textarea class='btn btn-group border-0 text-center font-weight-bold' name="descricao3" cols="25" rows="5" maxlength="250" id="comentariosProduto" placeholder="Informe a terceira propriedade" title="Terceira Descrição"></textarea>
+			  </td>
+			  <td align="center">
 				  <input hidden="" name="descricaoAnt4" type="text" id="descricaoProduto" placeholder="Informe um título de um propriedade do produro" title="Primeiro título" value='<?php echo $dados['descricao4'];?>' size="35" maxlength=50>
-				  <textarea name="descricao4" cols="35" rows="5" maxlength="250" id="comentariosProduto" placeholder="Informe a quarta propriedade" title="Quarta Descrição"></textarea>
-			  </blockquote></td>
+				  <textarea class='btn btn-group border-0 text-center font-weight-bold' name="descricao4" cols="25" rows="5" maxlength="250" id="comentariosProduto" placeholder="Informe a quarta propriedade" title="Quarta Descrição"></textarea>
+			  </td>
 			</tr>
 			</table>
 			 <table>
 			  <tr>
-			  <td align="center"><h5>Comentários sobre os</br>
-				resultados, benefícios etc...:</h5>
-				<font color="#000000">
-				<blockquote>
-				  <input hidden="" name="comentariosProdutoAnt" type="text" id="descricaoProduto" placeholder="Informe um título de um propriedade do produro" title="Primeiro título" value='<?php echo $dados['comentarioProduto'];?>' size="35" maxlength=50>
-				  <textarea name="comentariosProduto" cols="80" rows="10" maxlength="1500" id="comentariosProduto" placeholder="Informe algo adicional" title="Comentarios Produto"></textarea>
-				</blockquote></td>
+			  <td><p>&nbsp;</p></td>
+		      </tr>
+			  <tr>
+			  <td align="center">
+				  <textarea class='btn btn-group border-0 text-center font-weight-bold' name="comentariosProduto" cols="80" rows="10" maxlength="1500" id="comentariosProduto" placeholder="Comentários sobre os resultados, benefícios etc..." title="Comentarios Produto"></textarea>
+			  </td>
 			</tr>
 		  </table>
 		<tr>
+			<br>
 			<input name="alterar" type="submit" class="btn btn-primary" id="alterar" title="alterar" value="Alterar" />
 			<!--<p align="right"><a href="#" class="btn btn-primary">Cadastrar</a></p>-->
 			</blockquote>
