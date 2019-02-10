@@ -9,7 +9,7 @@ class Conexao
 	private $banco;
 	
 	//CONTRUTOR DA CLASSE
-	function __construct($servidor = "localhost", $usuario = "root", $senha="", $nomeBanco = "chayds_teste")
+	function __construct($servidor = "localhost", $usuario = "root", $senha="", $nomeBanco = "bancoFake")
 	{
 		$this->SetServidor($servidor);
 		$this->SetUsuario($usuario);
